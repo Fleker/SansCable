@@ -14,6 +14,9 @@ The code is used in Sans Cable, a website that acts as a 'DVR for web video' all
 Discover.js - The framework which is used for the 'Discover' section of Sans Cable
 Grid.js - The framework which is used to display tiles for Sans Cable
 
+### Other Modules
+Currently, the only file in the 'Other Modules' file is the php file which is used to generate videos in the play queue.
+
 ### Links
 + - [Page on G+](https://plus.google.com/108809944855659725152)	
 + - [Website](http://felkerdigitalmedia.com/sanscablebeta/)
