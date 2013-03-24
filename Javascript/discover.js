@@ -1,7 +1,10 @@
 function discoverTop() {
   	//gridClear();
 	data = [
-        { "title":"Holiday", "id":"Holiday", "type":"category", "tileId":100,  "user": {"id": "", "name": "Celebrate the season!"}, "description":"Celebrate the season with these holiday videos!", "img":"../design/discover/christmas.png", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},
+		/*{ "title":"Top Recent", "id":"Top Recent", "type":"category", "tileId":100,  "user": {"id": "", "name": "The top videos online right now"}, "description":"The top videos from YouTube right now are here", "img":"../design/discover/featured.png", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},*/
+		{ "title":"Top Daily", "id":"Top Daily", "type":"category", "tileId":100,  "user": {"id": "", "name": "The top videos online right now"}, "description":"The top videos from YouTube right now are here", "img":"../design/discover/featured.png", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},
+        { "title":"Top Viewed", "id":"Top Viewed", "type":"category", "tileId":100,  "user": {"id": "", "name": "Highest viewed videos of all time"}, "description":"The top videos from YouTube right now are here", "img":"../design/discover/featured.png", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},
+		{ "title":"Holiday", "id":"Holiday", "type":"category", "tileId":100,  "user": {"id": "", "name": "Celebrate the season!"}, "description":"Celebrate the season with these holiday videos!", "img":"../design/discover/christmas.png", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},
     	{ "title":"Featured", "id":"Featured", "type":"category", "tileId":100,  "user": {"id": "", "name": "Best of the best"}, "description":"Hand-picked videos, the best of YouTube, is shown here", "img":"../design/discover/featured.png", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"}
 	];
 	gridTitle('Discover');
@@ -26,6 +29,18 @@ function category(name) {
       	data = [
       		{ "title":"Deck'd", "id":"8_jr5Nf71sk", "type":"video", "tileId":100,  "user": {"id": "DominicFear", "name": "DominicFear"}, "description":"When some jerk punches Peter Bell after a well-choreographed musical number about the joys of Christmas, Peter finds himself humiliated and unsympathized by his friends and family.", "img":"http://i.ytimg.com/vi/8_jr5Nf71sk/hqdefault.jpg", "duration":{"seconds": '840', "friendly":'14:00'}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=8_jr5Nf71sk", "watched":0, "favorite":0, "src":"yt"},
       	];
+      	break;
+      	
+      	case 'Top Recent':
+			dataRecFeed();
+      	break;
+
+      	case 'Top Daily':
+			dataDayFeed();
+      	break;
+
+      	case 'Top Viewed':
+			dataPopFeed();
       	break;
  	}
  	gridCount(data.length);
