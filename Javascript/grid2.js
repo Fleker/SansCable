@@ -276,63 +276,23 @@ function redraw() {
     //DemoTemplateRows
     TILE_IDS = new Array();
     var i;
+    //DemoClassRows = new Array();
   //if(!window.device.mobile) {
-	for (i=0;i<(data.length);i++) {
-		TILE_IDS.push(i);
-	}
-			DemoTemplateRows[0] = new Array();
-			var str = 'A'
-			DemoTemplateRows[0].push(new Array(undefined,undefined,undefined,undefined,undefined,undefined));
-			i=0;
-			for(j=0;j<(data.length/3)+1;j++) {
-				DemoTemplateRows[0].push(new Array(undefined,undefined,undefined,undefined,undefined,undefined));
-				for(k=0;k<=5;k++) {
-	        	if(/*Math.random() > .5*/ DemoTemplateRows[0][j][k] == undefined && DemoTemplateRows[0][j][k+1] == undefined && DemoTemplateRows[0][j+1][k]== undefined && DemoTemplateRows[0][j+1][k+1]== undefined && k < 5) {
-				    if(data.length >= i && data.length > 0) {
-                      	//console.warn(data[i]);
-                      	//console.error(data[i] != null && data[i] != undefined);
-                      	if(data[i] != null && data[i] != undefined) {
-                          	if(data[i].tile >= 50) {
-            					DemoTemplateRows[0][j][k] = str;
-                                DemoTemplateRows[0][j+1][k] = str;
-                                DemoTemplateRows[0][j][k+1] = str;
-                                DemoTemplateRows[0][j+1][k+1] = str;
-                                //DemoClassRows.push('c-'+j+'_'+k);
-            					if(str == 'A')
-            		            		str = 'B';
-            		            	else if(str == 'B')
-            		            		str = 'C';
-            		            	else if(str == 'C')
-            		            		str = 'D';
-            		            	else
-            		            		str = 'A';
-            		            k++;
-            		            i++;
-        		            }
-        		        else {
-        		        	DemoTemplateRows[0][j][k] = '.';
-        		        	//.push('c-'+j+'_'+k);
-						}
-        		        }
-		      		}
-				}
-				else if(DemoTemplateRows[0][j][k] == undefined) {
-                 	DemoTemplateRows[0][j][k] = '.'
-    			  	//DemoClassRows.push('c-'+j+'_'+k);
-				  }
-				}
-				DemoTemplateRows[0][j] = DemoTemplateRows[0][j].toString().replace(/,/g, ' ');
-			}
+	
 
 
-           DemoTemplateRows[1] = new Array();
-        for(j=0;j<data.length / 6;j++) {
-			DemoTemplateRows[1].push(". . . . . .");
+    for(l=0;l<2;l++) {    
+        DemoTemplateRows[l] = new Array();
+        //DemoClassRows[l] = new Array();
+                for(j=0;j<data.length / 6;j++) {
+			DemoTemplateRows[l].push(". . . . . .");
 			for(k=0;k<=6;k++) {
-				//DemoClassRows.push('c-'+j+'_'+k);
+				//DemoClassRows[l].push('c-'+j+'_'+k);
 			}
 		}
+    }
 	DemoTemplateRows[2] = new Array();
+        DemoClassRows = new Array();
 		for(j=0;j<data.length;j++) {
 			if(j/2 != parseInt(j/2))
 				DemoTemplateRows[2].push('A A A A A A');
@@ -348,8 +308,8 @@ function redraw() {
 				DemoTemplateRows[3].push('A A B B');
 			else
 				DemoTemplateRows[3].push('B B A A');
-			//DemoClassRows.push('c-'+j+'_'+1);
-			//DemoClassRows.push('c-'+j+'_'+2);
+			///DemoClassRows[3].push('c-'+j+'_'+1);
+			//DemoClassRows[3].push('c-'+j+'_'+2);
 		}
 			DemoTemplateRows[4] = new Array();
 		for(j=0;j<data.length;j++) {
@@ -357,7 +317,7 @@ function redraw() {
     			DemoTemplateRows[4].push('A A');
 			else
     			DemoTemplateRows[4].push('B B');
-			//DemoClassRows.push('c-'+j+'_'+1);
+			//DemoClassRows[4].push('c-'+j+'_'+1);
 		}
 	//}
 	//else {

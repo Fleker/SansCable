@@ -82,7 +82,8 @@ function refreshDB(d) {
 					
                                         if(data[i].description != undefined) {
                                             data[i].description = data[i].description.replace('&lt;br&gt;','<br>', 'g');
-                                            data[i].description = data[i].description.replace('/&#039;',"'", 'g');
+                                            data[i].description = data[i].description.replace('&amp;#039;', "'", 'g');
+                                            data[i].description = data[i].description.replace('&#039;',"'", 'gi');
                                             data[i].description = data[i].description.replace('&quot;','"', 'g');
                                         }
 					//if(window.device.mobile != true && i < 25)
@@ -151,6 +152,12 @@ function getServerVideo(i, id, src, server) {
             data[i].seen = seen;
             data[i].favorite = favorite;
             data[i].watched = watched;
+            
+            data[i].description = data[i].description.replace('&lt;br&gt;','<br>', 'g');
+                data[i].description = data[i].description.replace('&amp;#039;', "'", 'g');
+                data[i].description = data[i].description.replace('&#039;',"'", 'gi');
+                data[i].description = data[i].description.replace('&quot;','"', 'g');
+
 
             dataSave = data;
             if(update && server != false)

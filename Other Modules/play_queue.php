@@ -1,10 +1,11 @@
 <?php
-	//echo ' START QUEUE ';
+	//echo '<!-- START QUEUE -->';
+        $data = array();
         $duration = 0;
 	$query = mysql_query("SELECT * FROM `video` WHERE `seen` > 0 AND `uid` = $uid AND `watched` = 0 ORDER BY `add` DESC");
  	while($row = mysql_fetch_assoc($query)) {
 		$duration = $duration + intval($row['duration']) - intval($row['seen']);
-     	//echo ' TO CONTINUE: '.$duration.'// '.$row['title'].'// '.$seen;
+     	//echo '  <!-- TO CONTINUE: '.$duration.'// '.$row['title'].'// '.$seen.' -->';
         array_push($data, array(
      		'id' => $row['vid'],
      		'title' => $row['title'],
@@ -32,7 +33,7 @@
 	 		$query = mysql_query("SELECT * FROM `video` WHERE `uid` = $uid AND `watched` = 0 ORDER BY `views` LIMIT 3");
 	        while($row = mysql_fetch_assoc($query)) {
 				$duration = $duration + intval($row['duration']) - intval($row['seen']);
-                        //echo " TOP IN LIST - $duration ";
+                        //echo '<!-- TOP IN LIST - '.$duration.'// '.$row['title'].'// '.$seen.' -->';
 		     	array_push($data, array(
 		     		'id' => $row['vid'],
 		     		'title' => $row['title'],
@@ -58,10 +59,10 @@
 		 	}
 	 }
 	 if($duration < 15*60) {
-            $query = mysql_query("SELECT * FROM `video` WHERE `uid` = $uid AND `watched` = 0 ORDER BY `seen` LIMIT 5");
+            $query = mysql_query("SELECT * FROM `video` WHERE `uid` = $uid AND `watched` = 0 AND `duration` > 0 ORDER BY `duration` LIMIT 5");
 	        while($row = mysql_fetch_assoc($query)) {
 				$duration = $duration + intval($row['duration']) - intval($row['seen']);
-                        //echo " QUICK PLAYS - $duration ";
+                        //echo    '<!-- QUICK PLAYS - '.$duration.'// '.$row['title'].'// '.$seen.' -->';
 		     	array_push($data, array(
 		     		'id' => $row['vid'],
 		     		'title' => $row['title'],
@@ -88,10 +89,14 @@
 	 }
          //get random top daily
          //echo " MOST VIEWED TODAY ";
+         
          $daily = file_get_contents('http://felkerdigitalmedia.com/sanscablebeta/data/videoFeed.php?f=most_viewed&s=yt&t=today');
-         $d = /*json_decode(*/$daily/*);*/;
+         $d = json_decode($daily);
+         //$d = $daily;
          $n = rand(0,24);
-         $d = $d[n];
+         //echo '<!--'.$n.' '.print_r($d).'-->';
+         $d = $d->$n;
+         //echo '<!-- * '.$d['title'].' -->';
          array_push($data, $d);
          
 ?>
