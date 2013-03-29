@@ -2,7 +2,9 @@ function discoverTop() {
   	//gridClear();
 	data = [
 		/*{ "title":"Top Recent", "id":"Top Recent", "type":"category", "tileId":100,  "user": {"id": "", "name": "The top videos online right now"}, "description":"The top videos from YouTube right now are here", "img":"../design/discover/featured.png", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},*/
-		{ "title":"Top Daily", "id":"Top Daily", "type":"category", "tileId":100,  "user": {"id": "", "name": "The top videos online right now"}, "description":"The top videos from YouTube right now are here", "img":"../design/discover/featured.png", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},
+		{ "title":"Your Dailies", "id":"Your Dailies", "type":"category", "tileId":100,  "user": {"id": "", "name": "Your newest fifty"}, "description":"Your fifty most recent videos", "img":"http://placehold.it/200&text=Dailies", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},
+                { "title":"Your Flicks", "id":"Your Flicks", "type":"category", "tileId":100,  "user": {"id": "", "name": "Your longest videos"}, "description":"Your longest videos, short films", "img":"http://placehold.it/200&text=Flicks", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},
+                { "title":"Top Daily", "id":"Top Daily", "type":"category", "tileId":100,  "user": {"id": "", "name": "The top videos online right now"}, "description":"The top videos from YouTube right now are here", "img":"../design/discover/featured.png", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},
                 { "title":"Top Viewed", "id":"Top Viewed", "type":"category", "tileId":100,  "user": {"id": "", "name": "Highest viewed videos of all time"}, "description":"The top videos from YouTube right now are here", "img":"../design/discover/featured.png", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},
 		/*{ "title":"Holiday", "id":"Holiday", "type":"category", "tileId":100,  "user": {"id": "", "name": "Celebrate the season!"}, "description":"Celebrate the season with these holiday videos!", "img":"../design/discover/christmas.png", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},
                 */{ "title":"Featured", "id":"Featured", "type":"category", "tileId":100,  "user": {"id": "", "name": "Best of the best"}, "description":"Hand-picked videos, the best of YouTube, are shown here", "img":"../design/discover/featured.png", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},
@@ -75,15 +77,27 @@ function category(name) {
         case 'Technology': 
         data = [
                 { "title":"Programming", "id":"Programming", "type":"category", "tileId":100,  "user": {"id": "", "name": "Programming Tips and Tricks"}, "description":"Guides and tutorials", "img":"http://placehold.it/200&text=Programming", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},
+                { "title":"90 Seconds on The Verge", "id":"A206E7ADE1517285", "type":"group", "tileId":100,  "user": {"id": "theverge", "name": "Daily tech news fast"}, "description":"", "img":"http:\/\/i.ytimg.com\/vi\/AbVCoGIcLeI\/hqdefault.jpg", "duration":{"seconds": '0', "friendly":' '}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=8_jr5Nf71sk", "watched":0, "favorite":0, "src":"yt"},            
                 { "title":"App Clinic", "id":"B7B9B23D864A55C3", "type":"group", "tileId":100,  "user": {"id": "androiddevelopers", "name": "androiddevelopers"}, "description":"When some jerk punches Peter Bell after a well-choreographed musical number about the joys of Christmas, Peter finds himself humiliated and unsympathized by his friends and family.", "img":"http://i.ytimg.com/vi/q-Q2uU6CbGQ/hqdefault.jpg", "duration":{"seconds": '840', "friendly":'14:00'}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=8_jr5Nf71sk", "watched":0, "favorite":0, "src":"yt"},            
-                { "title":"Armando Ferreira", "id":"wicked4u2c", "type":"user", "tileId":100,  "user": {"id": "wicked4u2c", "name": "Armando Ferreira"}, "description":"", "img":"http:\/\/lh5.googleusercontent.com\/-BGGegSk41aE\/AAAAAAAAAAI\/AAAAAAAAAAA\/XKib6AIVzV8\/s88-c-k\/photo.jpg", "duration":{"seconds": '840', "friendly":'14:00'}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=8_jr5Nf71sk", "watched":0, "favorite":0, "src":"yt"} 
-            ];
+                { "title":"Armando Ferreira", "id":"wicked4u2c", "type":"user", "tileId":100,  "user": {"id": "wicked4u2c", "name": "Armando Ferreira"}, "description":"", "img":"http:\/\/lh5.googleusercontent.com\/-BGGegSk41aE\/AAAAAAAAAAI\/AAAAAAAAAAA\/XKib6AIVzV8\/s88-c-k\/photo.jpg", "duration":{"seconds": '840', "friendly":'14:00'}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=8_jr5Nf71sk", "watched":0, "favorite":0, "src":"yt"}, 
+                { "title":"Nixie Pixel Does Linux", "id":"nixiedoeslinux", "type":"user", "tileId":100,  "user": {"id": "nixiedoeslinux", "name": "Open Source Software"}, "description":"", "img":"http:\/\/i3.ytimg.com\/i\/BE-FO9JUOghSysV9gjTeHw\/1.jpg?v=4f3c90ff", "duration":{"seconds": '840', "friendly":'14:00'}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=8_jr5Nf71sk", "watched":0, "favorite":0, "src":"yt"}, 
+                { "title":"The Verge", "id":"theverge", "type":"user", "tileId":100,  "user": {"id": "theverge", "name": "News and Hands-On"}, "description":"", "img":"http:\/\/i1.ytimg.com\/i\/ddiUEpeqJcYeBxX1IVBKvQ\/1.jpg?v=513e43dc", "duration":{"seconds": '840', "friendly":'14:00'}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=8_jr5Nf71sk", "watched":0, "favorite":0, "src":"yt"}, 
+                
+        ];
         break; 
         
         case 'Video Games':
         data = [
                 { "title":"COPS: Skyrim", "id":"3F85878A2CA41ABE", "type":"group", "tileId":100,  "user": {"id": "nerdist", "name": "Skyrim-based Show"}, "description":"", "img":"http:\/\/i.ytimg.com\/vi\/Uwh4UxtcVaY\/hqdefault.jpg", "duration":{"seconds": '840', "friendly":'14:00'}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=8_jr5Nf71sk", "watched":0, "favorite":0, "src":"yt"},            
         ];
+        break;
+        
+        case 'Your Dailies':
+                        refreshDB('fifty');
+        break;
+        
+        case 'Your Flicks':
+            refreshDB('flicks');
         break;
         
       	case 'Top Recent':

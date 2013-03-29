@@ -8,7 +8,7 @@ $error = array(
 $uid = $_SESSION['uid'];
 
 $db = validate($_POST['data']);
-if($db == 'new' || $db == 0 || $db == 'all' || $db == 'qx') {
+if($db == 'new' || $db == 0 || $db == 'all' || $db == 'qx' || $db == 'fifty') {
 	if($db == 'new') {
 		$query = mysql_query("SELECT * FROM `video` WHERE `watched` = 0 AND `uid` = $uid ORDER BY `add` DESC");
 		echo mysql_error();
@@ -21,6 +21,14 @@ if($db == 'new' || $db == 0 || $db == 'all' || $db == 'qx') {
 		$query = mysql_query("SELECT * FROM `video` WHERE `uid` = $uid ORDER BY `add` DESC");
 		echo mysql_error();
 	}
+        else if($db == 'fifty') {
+                $query = mysql_query("SELECT * FROM `video` WHERE `watched` = 0 AND `uid` = $uid ORDER BY `add` DESC LIMIT 50");
+                echo mysql_error(); 
+        }
+        else if($db == 'flicks') {
+                $query = mysql_query("SELECT * FROM `video` WHERE `watched` = 0 AND `uid` = $uid ORDER BY `duration` DESC LIMIT 12");
+                echo mysql_error(); 
+        }
 	else /*$db == q*/ {
      	$query = mysql_query("SELECT * FROM `video` WHERE `watched` = 0 AND `seen` > 0 AND `uid` = $uid ORDER BY `add` DESC");
  	}

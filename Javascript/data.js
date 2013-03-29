@@ -50,7 +50,22 @@ function dataDayFeed() {
 		redraw();
 	});
 }
-
+function dataFiftyFeed() {
+  	//gridTitle('Most Popular');
+  	gridCount(0, true);
+	$.post('../data/videoFeed.php?f=recently_featured&s=yt', {}, function(response) {
+		r = jQuery.parseJSON(response);
+		console.log('viral videos received');
+		//rearrange video data and tile data!
+		data = new Array();
+		gridClear();
+		for(i=0;i<25;i++) {
+			data.push({'id':r[i].id, 'src':r[i].src, 'tile':r[i].tile, 'seen':0, 'url':r[i].url, 'views':r[i].views, 'title':r[i].title, 'user':r[i].user.name, 'img':r[i].img, 'duration':r[i].duration.friendly, 'time':r[i].time, 'description':r[i].description, 'offline':false });
+		}
+        gridCount(data.length);
+		redraw();
+	});
+}
 
 //Now pull data from the server in two-step getter  
 unwatched = {'length': 0, 'updated': new Date().getTime() / 1000};
