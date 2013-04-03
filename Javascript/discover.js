@@ -15,7 +15,7 @@ function discoverTop() {
                   { "title":"Technology", "id":"Technology", "type":"category", "tileId":100,  "user": {"id": "", "name": "Smartphones and the web"}, "description":"For techies and hipsters", "img":"http://placehold.it/200&text=Tech", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"},
                   { "title":"Video Games", "id":"Video Games", "type":"category", "tileId":100,  "user": {"id": "", "name": "Lets Plays and Trailers"}, "description":"For nerds and geeks", "img":"http://placehold.it/200&text=Video+Games", "duration":{"seconds": '', "friendly":''}, "seen":0, "time":"now", "views":0, "url":"https://www.youtube.com/watch?v=T7MDMdfcRfI", "watched":0, "favorite":0, "src":"yt"}
                     ];
-	gridTitle('Discover');
+	gridTitle('Discover - <a href="https://docs.google.com/forms/d/10XWU5iYH29nevnUZr_TFqwwj8JJMLqAgIZNrYJ4u3i8/viewform" target="_blank">Suggest</a>');
 	gridCount(data.length);
 	dataSave = data;
 	redraw();
