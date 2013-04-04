@@ -136,6 +136,7 @@ function unwatchedCount() {
 }
 
 function getServerVideo(i, id, src, server) {
+	
 	$.get('../data/video.php', {id: id, s: src}, function(res) {
 		console.log(res);
         //window.res = jQuery.parseJSON(res);
@@ -186,6 +187,8 @@ function getServerVideo(i, id, src, server) {
 				grid.resize();
                 grid.redraw(true);	
    			}
+			if(window.device.cable3 == true)
+				redraw();
 			//redraw();
 			//don't reset the whole grid, just refrsh it
         }

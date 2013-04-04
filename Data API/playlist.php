@@ -12,7 +12,7 @@ if(!isset($_GET['s']))
 	$source = 'yt';
 $meta = $_GET['meta'];
 if(!isset($_GET['meta']))
-	$meta = true;
+	$meta = false;
 
 if(!playlist_exists($pl, $source)) {
 	$data = error404();
@@ -110,6 +110,20 @@ else {
 	}
 	else
 		$data = error404();
+}
+
+if($_GET['uid']) {
+	//get playlist object - sub_pl
+	$db = $_GET['uid'];
+	$query = mysql_query("SELECT * FROM `_subscriptions_pl` WHERE `uid` = $db LIMIT 1");
+	while($row = mysql_fetch_assoc($query)) {
+		$data['source'] = null;
+		$data['status'] = 1; /*subscribed*/
+	}
+	if(!mysql_num_rows($query)) {
+		$data['source'] = null;
+		$data['status'] = 0;
+	}
 }
 
 echo json_encode($data);

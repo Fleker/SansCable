@@ -280,51 +280,15 @@ function redraw() {
 	for (i=0;i<(data.length);i++) {
 		TILE_IDS.push(i);
 	}
-			DemoTemplateRows[0] = new Array();
-			var str = 'A'
-			DemoTemplateRows[0].push(new Array(undefined,undefined,undefined,undefined,undefined,undefined));
-			i=0;
-			for(j=0;j<(data.length/3)+1;j++) {
-				DemoTemplateRows[0].push(new Array(undefined,undefined,undefined,undefined,undefined,undefined));
-				for(k=0;k<=5;k++) {
-	        	if(/*Math.random() > .5*/ DemoTemplateRows[0][j][k] == undefined && DemoTemplateRows[0][j][k+1] == undefined && DemoTemplateRows[0][j+1][k]== undefined && DemoTemplateRows[0][j+1][k+1]== undefined && k < 5) {
-				    if(data.length >= i && data.length > 0) {
-                      	//console.warn(data[i]);
-                      	//console.error(data[i] != null && data[i] != undefined);
-                      	if(data[i] != null && data[i] != undefined) {
-                          	if(data[i].tile >= 50) {
-            					DemoTemplateRows[0][j][k] = str;
-                                DemoTemplateRows[0][j+1][k] = str;
-                                DemoTemplateRows[0][j][k+1] = str;
-                                DemoTemplateRows[0][j+1][k+1] = str;
-                                //DemoClassRows.push('c-'+j+'_'+k);
-            					if(str == 'A')
-            		            		str = 'B';
-            		            	else if(str == 'B')
-            		            		str = 'C';
-            		            	else if(str == 'C')
-            		            		str = 'D';
-            		            	else
-            		            		str = 'A';
-            		            k++;
-            		            i++;
-        		            }
-        		        else {
-        		        	DemoTemplateRows[0][j][k] = '.';
-        		        	//.push('c-'+j+'_'+k);
-						}
-        		        }
-		      		}
-				}
-				else if(DemoTemplateRows[0][j][k] == undefined) {
-                 	DemoTemplateRows[0][j][k] = '.'
-    			  	//DemoClassRows.push('c-'+j+'_'+k);
-				  }
-				}
-				DemoTemplateRows[0][j] = DemoTemplateRows[0][j].toString().replace(/,/g, ' ');
+			
+		DemoTemplateRows[0] = new Array();
+        for(j=0;j<data.length / 6;j++) {
+			DemoTemplateRows[0].push(". . . . . .");
+			for(k=0;k<=6;k++) {
+				//DemoClassRows.push('c-'+j+'_'+k);
 			}
-
-
+		}	
+			
            DemoTemplateRows[1] = new Array();
         for(j=0;j<data.length / 6;j++) {
 			DemoTemplateRows[1].push(". . . . . .");
